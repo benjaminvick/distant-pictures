@@ -51,6 +51,7 @@ http.listen(serverPort, function() {
 //Default options
 var opts = { //These Options define how the webcam is operated.
     //Picture related
+    // edits to size***
     width: 1280, //size
     height: 720,
     quality: 100,
@@ -88,6 +89,13 @@ serial.pipe(parser);
 parser.on('data', function(data) {
   console.log('Data:', data);
   io.emit('server-msg', data);
+
+// activate the camera on button press ***
+  if (data == 'dark') {
+    console.log('Button press!');
+    takePicture();
+    console.log('Took a picture');
+    }
 });
 //----------------------------------------------------------------------------//
 
@@ -118,6 +126,11 @@ io.on('connect', function(socket) {
     var imageName = new Date().toString().replace(/[&\/\\#,+()$~%.'":*?<>{}\s-]/g, '');
 
     console.log('making a making a picture at'+ imageName); // Second, the name is logged to the console.
+
+    //Reporting the size of the picture via the command like ***
+    var sizeOf = require('image-size');
+    var dimensions = sizeOf(imageName);
+    console.log(dimensions.width, dimensions.height);
 
     //Third, the picture is  taken and saved to the `public/`` folder
     NodeWebcam.capture('public/'+imageName, opts, function( err, data ) {

@@ -36,17 +36,18 @@ socket.on('newPicture', function(msg) {
 });
 // read the data from the message that the server sent and change the
 // background of the webpage based on the data in the message
+// changed the colors of the background to lightblue and red ***
 socket.on('server-msg', function(msg) {
   msg = msg.toString();
   console.log('msg:', msg);
   switch (msg) {
     case "light":
-      document.body.style.backgroundColor = "white";
-      console.log("white")
+      document.body.style.backgroundColor = "lightblue";
+      console.log("lightblue")
       break;
     case "dark":
-      document.body.style.backgroundColor = "black";
-      console.log("black");
+      document.body.style.backgroundColor = "red";
+      console.log("red");
       break;
     default:
       //console.log("something else");
