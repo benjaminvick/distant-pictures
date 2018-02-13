@@ -42,8 +42,8 @@ socket.on('server-msg', function(msg) {
   console.log('msg:', msg);
   switch (msg) {
     case "light":
-      document.body.style.backgroundColor = "lightblue";
-      console.log("lightblue")
+      document.body.style.backgroundColor = "blue";
+      console.log("blue")
       break;
     case "dark":
       document.body.style.backgroundColor = "red";
