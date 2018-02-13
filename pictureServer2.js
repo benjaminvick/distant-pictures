@@ -80,8 +80,8 @@ var imageName = new Date().toString().replace(/[&\/\\#,+()$~%.'":*?<>{}\s-]/g, '
 
 console.log('making a making a picture at'+ imageName); // Second, the name is logged to the console.
 
-//Reporting the size of the picture via the command like ***
-// var sizeOf = require(opts);
+//Reporting the size of the picture via the command line ***
+//var sizeOf = require(opts);
 //var dimensions = sizeOf('public/'+imageName);
 //console.log(dimensions.width, dimensions.height);
 
