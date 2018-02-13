@@ -19,6 +19,9 @@ served from. You will also need to include the serial port address as a command
 line input.
 */
 
+// I worked collaboratively with several classmates to complete the button press to take picture portion of the assignment
+// I used code from several npm packages to attempt the npm install portion of the assignment. Additional detail in assignment description
+
 var express = require('express'); // web server application
 var app = express(); // webapp
 var http = require('http').Server(app); // connects http library to server
